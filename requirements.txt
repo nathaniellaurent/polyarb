@@ -3,3 +3,4 @@ openai
 tqdm
 numpy
 python-dotenv
+scikit-learn

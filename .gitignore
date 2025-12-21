@@ -6,6 +6,8 @@ data/*.csv
 # Output files
 output/*.pkl
 output/*.npz
+output/*.csv
+
 
 # Python
 __pycache__/

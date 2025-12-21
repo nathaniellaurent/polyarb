@@ -111,10 +111,10 @@ def main():
         }
         print(f"Created {sum(1 for e in kalshi_embeddings if e is not None)} Kalshi embeddings")
     
-    # Create Polymarket embeddings from "description" field
-    if polymarket_df is not None and 'description' in polymarket_df.columns:
-        print("\nCreating embeddings for Polymarket descriptions...")
-        polymarket_texts = polymarket_df['description'].tolist()
+    # Create Polymarket embeddings from "question" field
+    if polymarket_df is not None and 'question' in polymarket_df.columns:
+        print("\nCreating embeddings for Polymarket questions...")
+        polymarket_texts = polymarket_df['question'].tolist()
         polymarket_embeddings = create_embeddings_batch(polymarket_texts)
         
         # Store with id as ID (or slug if id not available)
@@ -129,7 +129,7 @@ def main():
             'ids': polymarket_ids,
             'texts': polymarket_texts,
             'embeddings': polymarket_embeddings,
-            'field': 'description'
+            'field': 'question'
         }
         print(f"Created {sum(1 for e in polymarket_embeddings if e is not None)} Polymarket embeddings")
     
